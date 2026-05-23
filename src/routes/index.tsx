@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import mentorshipIllustration from "../assets/mentorship_illustration.png";
 import logoUrl from "../assets/logo.png";
+import sgPhoto from "../assets/SG Photo.jpeg";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -561,7 +562,7 @@ function Founder() {
                 {/* Inner Container */}
                 <div className="w-full h-full rounded-full bg-ink flex flex-col items-center justify-center overflow-hidden border border-border relative group">
                   <img
-                    src="src\assets\SG Photo.jpeg"
+                    src={sgPhoto}
                     alt="Dr. Shivangi Goyal"
                     className="w-full h-full object-cover rounded-full scale-105 group-hover:scale-110 transition-transform duration-700"
                   />
