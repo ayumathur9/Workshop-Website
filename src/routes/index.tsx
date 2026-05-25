@@ -791,33 +791,86 @@ function Company() {
 /* ---------- LEARN ---------- */
 function Learn() {
   const items = [
-    "Building a World-Class Intellectual Identity",
-    "Strategic Profile Building for Ivy League & Global Universities",
-    "Research, Innovation & Capstone Development for 2027/2028 Admissions",
-
+    {
+      heading: "Student Spike Workbook",
+      content: "Booklet with curiosity exercises.",
+    },
+    {
+      heading: "Profile Building Framework",
+      content:
+        "Project brainstorming methodology and roadmap creation.",
+    },
+    {
+      heading: "30 Days Passion Project Challenge",
+      content:
+        "Comes with challenge sheets, execution prompts, and a detailed execution timeline.",
+    },
+    {
+      heading: "Curiosity Map",
+      content:
+        "A self-guided self-discovery framework to identify your intellectual interests.",
+    },
+    {
+      heading: "The Anti-Resume",
+      content:
+        "A trademarked framework by Intelligent Education to showcase depth beyond achievements.",
+    },
+    {
+      heading: "5 Hour Weekly Growth System",
+      content:
+        "Learn how to use your weekly time intentionally for long-term growth.",
+    },
+    // {
+    //   heading: "14 Days Intellectual Courage Challenge",
+    //   content:
+    //     "Build a consistent pattern of action, exploration, and personal growth.",
+    // },
   ];
+
   return (
     <section id="learn" className="relative py-28 md:py-36">
       <div className="max-w-6xl mx-auto px-6">
+        {/* Heading */}
         <div className="text-center reveal">
-          <span className="text-[11px] tracking-[0.3em] uppercase text-gold">Takeaways </span>
-          <h2 className="mt-5 font-serif text-4xl md:text-6xl">What You Will Learn</h2>
+          <span className="text-[11px] tracking-[0.3em] uppercase text-gold">
+            Takeaways
+          </span>
+
+          <h2 className="mt-5 font-serif text-4xl md:text-6xl text-ivory">
+            What You'll Walk Away With
+          </h2>
+
           <p className="mt-5 max-w-2xl mx-auto text-muted-foreground">
-            A precise, high-signal walkthrough of the levers that move world-class admissions outcomes.
+            Practical frameworks, guided exercises, and systems designed to
+            help students build exceptional intellectual profiles.
           </p>
         </div>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {items.map((it, i) => (
+        {/* Cards */}
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {items.map((item, i) => (
             <div
-              key={it}
-              className="reveal glass rounded-xl p-5 flex items-start gap-4 hover:border-gold/40 hover:translate-x-1 transition-all duration-500"
-              style={{ transitionDelay: `${i * 40}ms` }}
+              key={item.heading}
+              className="reveal glass rounded-2xl p-6 border border-white/10 hover:border-gold/40 transition-all duration-500 hover:-translate-y-1"
+              style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="mt-0.5 shrink-0 w-7 h-7 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center">
-                <Check className="w-3.5 h-3.5 text-gold" />
+              <div className="flex items-start gap-4">
+                {/* Icon */}
+                <div className="mt-1 shrink-0 w-8 h-8 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center">
+                  <Check className="w-4 h-4 text-gold" />
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h3 className="text-lg font-semibold text-ivory leading-snug">
+                    {item.heading}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.content}
+                  </p>
+                </div>
               </div>
-              <p className="text-ivory leading-snug">{it}</p>
             </div>
           ))}
         </div>
@@ -825,6 +878,7 @@ function Learn() {
     </section>
   );
 }
+
 
 /* ---------- PRICING CARDS ---------- */
 function Pricing() {
