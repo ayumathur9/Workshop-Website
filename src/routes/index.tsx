@@ -9,6 +9,7 @@ import {
 import mentorshipIllustration from "../assets/mentorship_illustration.png";
 import logoUrl from "../assets/logo.png";
 import sgPhoto from "../assets/SG Photo.jpeg";
+import proofImage from "../assets/proof.png";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "An invite-only in-person strategy session for students & parents planning 2027/2028 Undergraduate & Master's intakes. Limited to 15 seats at Kunzum Books, GK II, New Delhi.",
+          "A limited in-person strategy session for students & parents planning 2027/2028 Undergraduate & Master's intakes. Limited to 15 seats at Kunzum Books, GK II, New Delhi.",
       },
       { property: "og:title", content: "Your Study Abroad Journey Starts Before Applications" },
       { property: "og:description", content: "Exclusive in-person strategy session by Dr. Shivangi Goyal — only 15 seats." },
@@ -89,8 +90,8 @@ function LandingPage() {
       <Hero />
       <About />
       <Timeline />
-      <Company />
       <Founder />
+      <Company />
       <Learn />
       <Pricing />
       <WhyAttend />
@@ -122,15 +123,15 @@ function Nav({ scrolled }: { scrolled: boolean }) {
         <nav className="hidden xl:flex items-center gap-7 text-sm text-muted-foreground">
           <a href="#about" className="hover:text-gold transition-colors">About</a>
           <a href="#timeline" className="hover:text-gold transition-colors">Timeline</a>
-          <a href="#company" className="hover:text-gold transition-colors">About Us</a>
           <a href="#founder" className="hover:text-gold transition-colors">Founder</a>
-          <a href="#learn" className="hover:text-gold transition-colors">Curriculum</a>
+          <a href="#learn" className="hover:text-gold transition-colors">Takeaways </a>
+          <a href="#company" className="hover:text-gold transition-colors">About Us</a>
           <a href="#pricing" className="hover:text-gold transition-colors">Pricing</a>
           <a href="#why-attend" className="hover:text-gold transition-colors">Why Attend</a>
-          <a href="#register" className="hover:text-gold transition-colors"></a>
+          <a href="https://rzp.io/rzp/W2qzhuzt" className="hover:text-gold transition-colors"></a>
         </nav>
         <a
-          href="#register"
+          href="https://rzp.io/rzp/W2qzhuzt"
           className="hidden md:inline-flex btn-gold px-5 py-2.5 rounded-full text-sm font-medium"
         >
           Reserve Your Seat
@@ -149,8 +150,8 @@ function Urgency() {
             <div key={i} className="flex shrink-0 items-center gap-10 pr-10">
               <span>Registrations closing soon</span><span>•</span>
               <span>Only 15 seats available</span><span>•</span>
-              <span>20 June 2026 · 5:00 PM - 7:00 PM · Kunzum Books, GK II</span><span>•</span>
-              <span>Invite-only experience</span><span>•</span>
+              <span>20 June 2026 · 5:15 PM - 6:30 PM · Kunzum Books, GK II</span><span>•</span>
+              <span>Limited seating</span><span>•</span>
               <span>2027 / 2028 intakes</span><span>•</span>
             </div>
           ))}
@@ -163,107 +164,163 @@ function Urgency() {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section id="top" className="relative bg-hero grain pt-44 pb-28 md:pt-52 md:pb-36 overflow-hidden">
-      <div className="glow-orb animate-float-slow" style={{ width: 520, height: 520, top: -120, left: -120, background: "oklch(0.82 0.13 85 / 18%)" }} />
-      <div className="glow-orb animate-float-slow" style={{ width: 600, height: 600, bottom: -200, right: -150, background: "oklch(0.35 0.10 280 / 25%)", animationDelay: "3s" }} />
+    <>
+      <section
+        id="top"
+        className="relative bg-hero grain pt-44 pb-28 md:pt-52 md:pb-36 overflow-hidden"
+      >
+        <div
+          className="glow-orb animate-float-slow"
+          style={{
+            width: 520,
+            height: 520,
+            top: -120,
+            left: -120,
+            background: "oklch(0.82 0.13 85 / 18%)",
+          }}
+        />
 
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="flex justify-center mb-8 reveal">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-[11px] tracking-[0.25em] uppercase text-gold">
-            <Sparkles className="w-3.5 h-3.5" /> Elite Global University Strategy Session
-          </span>
-        </div>
+        <div
+          className="glow-orb animate-float-slow"
+          style={{
+            width: 600,
+            height: 600,
+            bottom: -200,
+            right: -150,
+            background: "oklch(0.35 0.10 280 / 25%)",
+            animationDelay: "3s",
+          }}
+        />
 
-        <h1 className="reveal text-center font-serif text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
-          Your Study Abroad Journey
-          <br />
-          <span className="italic text-gradient-gold">Starts Before</span> Applications.
-        </h1>
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <div className="flex justify-center mb-8 reveal">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-[11px] tracking-[0.25em] uppercase text-gold">
+              <Sparkles className="w-3.5 h-3.5" />
+              Elite Global University Strategy Session
+            </span>
+          </div>
 
-        <p className="reveal mt-8 max-w-2xl mx-auto text-center text-lg md:text-xl text-muted-foreground leading-relaxed">
-          An exclusive in-person strategy session for students & parents planning for
-          <span className="text-ivory"> 2027 / 2028 </span>
-          Undergraduate & Master's intakes.
-        </p>
+          <h1 className="reveal text-center font-serif text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
+            Your Study Abroad Journey
+            <br />
+            <span className="italic text-gradient-gold">
+              Starts Before
+            </span>{" "}
+            Applications.
+          </h1>
 
-        <div className="reveal mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          {[
-            { icon: Calendar, label: "Date", value: "20 June 2026" },
-            { icon: Clock, label: "Time", value: "5:00 PM - 7:00 PM" },
-            { icon: MapPin, label: "Venue", value: "Kunzum Books, GK II" },
-          ].map((d) => (
-            <div key={d.label} className="glass rounded-2xl p-5 flex items-center gap-4">
-              <div className="w-11 h-11 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
-                <d.icon className="w-5 h-5 text-gold" />
+          <p className="reveal mt-8 max-w-2xl mx-auto text-center text-lg md:text-xl text-muted-foreground leading-relaxed">
+            An exclusive in-person strategy session with{" "}
+            <em className="text-gradient-gold not-italic">
+              Dr. Shivangi Goyal
+            </em>{" "}
+            for students & parents planning for
+            <span className="text-ivory"> 2027 / 2028 </span>
+            Undergraduate & Master's intakes.
+          </p>
+
+          <div className="reveal mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {[
+              { icon: Calendar, label: "Date", value: "20 June 2026" },
+              { icon: Clock, label: "Time", value: "5:15 PM - 6:30 PM" },
+              { icon: MapPin, label: "Venue", value: "Kunzum Books, GK II" },
+            ].map((d) => (
+              <div
+                key={d.label}
+                className="glass rounded-2xl p-5 flex items-center gap-4"
+              >
+                <div className="w-11 h-11 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+                  <d.icon className="w-5 h-5 text-gold" />
+                </div>
+
+                <div>
+                  <div className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                    {d.label}
+                  </div>
+
+                  <div className="font-serif text-lg text-ivory">
+                    {d.value}
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">{d.label}</div>
-                <div className="font-serif text-lg text-ivory">{d.value}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <p className="reveal mt-5 text-center text-sm text-muted-foreground">
+            60, Block M, Greater Kailash II, New Delhi 110048
+          </p>
+
+          <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://rzp.io/rzp/W2qzhuzt"
+              className="btn-gold px-8 py-4 rounded-full font-medium inline-flex items-center gap-2"
+            >
+              Reserve Your Seat
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <span className="btn-outline-gold px-6 py-3.5 rounded-full text-sm tracking-wide">
+              Only 15 Seats Available
+            </span>
+          </div>
+
+          <div className="reveal mt-16 gold-divider max-w-xl mx-auto" />
+
+          <p className="reveal mt-6 text-center text-xs tracking-[0.4em] uppercase text-muted-foreground shimmer-text">
+            Premium · Limited · Future-Ready Positioning
+          </p>
         </div>
+      </section>
 
-        <p className="reveal mt-5 text-center text-sm text-muted-foreground">
-          60, Block M, Greater Kailash II, New Delhi 110048
-        </p>
-
-        <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#register" className="btn-gold px-8 py-4 rounded-full font-medium inline-flex items-center gap-2">
-            Reserve Your Seat <ArrowRight className="w-4 h-4" />
-          </a>
-          <span className="btn-outline-gold px-6 py-3.5 rounded-full text-sm tracking-wide">
-            Only 15 Seats Available
-          </span>
+      {/* ---------- HERO VIDEO ---------- */}
+      <section className="relative px-6 -mt-10 md:-mt-16 z-20">
+        <div className="max-w-5xl mx-auto overflow-hidden rounded-[2rem] border border-border shadow-2xl bg-black">
+          <iframe
+            className="w-full aspect-video"
+            src="https://www.youtube.com/embed/QUq3tIQe3Sc?autoplay=1&mute=1&loop=1&playlist=QUq3tIQe3Sc&controls=1&showinfo=0&modestbranding=1&rel=0"
+            title="Event Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
-
-        <div className="reveal mt-16 gold-divider max-w-xl mx-auto" />
-        <p className="reveal mt-6 text-center text-xs tracking-[0.4em] uppercase text-muted-foreground shimmer-text">
-          Premium · Invite-Only · Future-Ready Positioning
-        </p>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
-
 /* ---------- ABOUT ---------- */
 function About() {
   const cards = [
     {
       icon: GraduationCap,
-      t: "Complimentary 1-on-1 Mentorship Sessions",
-      d: "A dedicated strategy session with Dr. Shivangi Goyal to map your profile positioning and global university roadmap.",
+      t: "Intellectual Identity & University Strategy Sessions",
+      d: "Exclusive 1-on-1 mentorship with Dr. Shivangi Goyal focused on building your intellectual identity, strengthening your profile positioning, and crafting a tailored roadmap for top global university admissions.",
     },
     {
       icon: Users,
-      t: "Founders & Community Membership Access",
-      d: "Gain exclusive entry into our elite, invite-only network of high-achieving peers, successful alumni, and mentors.",
+      t: "90-Day Elevator Pitch Framework",
+      d: "Learn how to strategically craft and refine a compelling personal pitch over 90 Seconds to confidently present your story, achievements, and ambitions to top global universities.",
     },
     {
       icon: BookOpen,
-      t: "Exclusive Study Abroad Documents & Resources",
-      d: "Access premium profile-building dossiers, resume guides, and successfully accepted application essay templates.",
+      t: "Profile Building Beyond Resume Filling",
+      d: "Learn how to strategically develop a high-impact profile through meaningful projects, leadership, research, and intellectual depth not just by adding random achievements to your resume.",
     },
     {
       icon: Target,
-      t: "Personalized Profile Guidance",
-      d: "Tailored strategic positioning to structure your unique academic voice, projects, and personal narrative.",
+      t: "Research Paper Development & Publication",
+      d: "Learn how to identify impactful research ideas, structure a strong paper, and navigate the process of writing, publishing, and presenting research effectively.",
     },
     {
       icon: Globe2,
-      t: "Elite Networking Opportunities",
-      d: "Connect directly with fellow top-tier applicants and parents sharing your global academic aspirations.",
+      t: "Building a Real-World Capstone Project",
+      d: "Learn how to conceptualize, develop, and present a functional capstone project that demonstrates innovation, problem-solving, and practical impact.",
     },
     {
       icon: Award,
-      t: "Official Certificate of Attendance",
-      d: "Receive an accredited certificate of participation from Intelligent Education recognizing your proactive preparation.",
+      t: "Answering the Most Unanswered Questions",
+      d: "Gain clarity on the hidden realities, common misconceptions, and strategic decisions that shape successful global university admissions.",
     },
-    {
-      icon: Sparkles,
-      t: "Strategic Admissions Planning",
-      d: "Comprehensive roadmap targeting undergraduate and master’s admissions at top-tier global universities and Ivy Leagues.",
-    },
+
   ];
   return (
     <section id="about" className="relative py-28 md:py-36">
@@ -276,14 +333,16 @@ function About() {
             This Is About Building Your <em className="text-gradient-gold not-italic">Future Identity.</em>
           </h2>
           <div className="mt-10 space-y-5 text-muted-foreground text-lg leading-relaxed">
-            <p>Most students start preparing too late.</p>
+            <p>It is never to early to start.</p>
             <p>
               Top global universities today are not only looking for marks — they are looking for
               thinkers, creators, researchers, innovators, and students with a strong personal story.
             </p>
             <p className="text-ivory">
-              This exclusive workshop helps students strategically build a world-class profile
-              <span className="text-gold"> years before applications begin.</span>
+              This exclusive workshop helps students strategically build a world-class profile years before applications begin.
+            </p>
+            <p className="text-ivory">
+              <span className="text-gold"> ONE PROMISE! THIS IS NOT A MARKETING WORKSHOP</span>
             </p>
           </div>
         </div>
@@ -322,44 +381,44 @@ function Timeline() {
     },
     {
       time: "05:15 PM",
-      title: "Future of Global Education",
-      desc: "Understand the changing landscape of elite international education and shifting Ivy League admission trends.",
+      title: "How to Build & Enhance Your Intellectual Identity",
+      desc: "Learn how to strategically shape your academic profile, personal brand, and extracurricular narrative to stand out for top global university admissions.",
       icon: Globe2,
     },
     {
       time: "05:30 PM",
-      title: "University Selection Strategy",
-      desc: "A data-driven methodology for selecting institutions that match academic strengths and career aspirations.",
+      title: "Elevator Pitch",
+      desc: "Learn how to strategically craft and refine a compelling personal pitch over 90 days to confidently present your story, achievements and ambitions.",
       icon: GraduationCap,
     },
     {
       time: "05:45 PM",
-      title: "Scholarship & Funding Guidance",
-      desc: "Strategic guidance on securing merit-based scholarships, research grants, and institutional financial aid.",
+      title: "Research paper and topic selection ",
+      desc: "Framework to comeup with the exatch topics that resonate with your profile.",
       icon: Award,
     },
     {
       time: "06:00 PM",
-      title: "Profile Building Roadmap",
-      desc: "The step-by-step process of constructing a competitive academic profile through research, projects, and leadership.",
+      title: "Capstone project building ",
+      desc: "Step-by-step process of constructing a project that resonates with your profile, goals and aspiration.",
       icon: Compass,
     },
     {
       time: "06:15 PM",
-      title: "Application Strategy",
-      desc: "Demystifying early action, early decision cycles, personal statement narratives, and letter of recommendation selection.",
+      title: "Connecting your research and capstone project ",
+      desc: "How to connect each and every aspect of your profile to build a strong direct narative.",
       icon: Target,
     },
     {
-      time: "06:30 PM",
-      title: "Q&A Session",
-      desc: "An open, interactive forum for parents and students to ask specific strategy and positioning questions.",
+      time: "06:25 PM",
+      title: "F & Q Session",
+      desc: "Answering the most unanswered questions about profile building and study abroad.",
       icon: Quote,
     },
     {
-      time: "06:45 PM - 07:00 PM",
+      time: "06:30 PM - 07:00 PM",
       title: "Networking & Mentorship",
-      desc: "Concluding 1-on-1 networking. Register for complimentary follow-up assessment sessions with chief mentors.",
+      desc: "Concluding 1-on-1 networking, direct metorship with our head mentors and counselor. You can get a chance for complimentary follow-up mentorship sessions with chief mentors.",
       icon: Sparkles,
     },
   ];
@@ -416,6 +475,200 @@ function Timeline() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </div>
+      <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="https://rzp.io/rzp/W2qzhuzt"
+          className="btn-gold px-8 py-4 rounded-full font-medium inline-flex items-center gap-2"
+        >
+          Reserve Your Seat
+          <ArrowRight className="w-4 h-4" />
+        </a>
+
+        <span className="btn-outline-gold px-6 py-3.5 rounded-full text-sm tracking-wide">
+          Only 15 Seats Available
+        </span>
+      </div>
+
+    </section>
+  );
+
+}
+
+
+
+/* ---------- SECTION 5 — ABOUT THE FOUNDER ---------- */
+function Founder() {
+  const stats = [
+    { value: "10+", label: "Years Mentoring" },
+    { value: "10000+", label: "Students Placed" },
+    { value: "30+", label: "Ivy & Elite Univs" },
+    { value: "98%", label: "Success Rate" },
+  ];
+
+  return (
+    <section
+      id="founder"
+      className="relative overflow-hidden border-t border-border bg-background py-24 md:py-32"
+    >
+      {/* Ambient Glow */}
+      <div
+        className="glow-orb animate-float-slow pointer-events-none"
+        style={{
+          width: 500,
+          height: 500,
+          top: "20%",
+          left: "-120px",
+          background: "oklch(0.82 0.13 85 / 10%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="grid items-start gap-20 lg:grid-cols-12">
+          {/* LEFT SIDE */}
+          <div className="reveal lg:col-span-5">
+            <div className="relative mx-auto w-full max-w-[420px]">
+              {/* Decorative ring */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold/20 to-transparent blur-3xl" />
+
+              <div className="absolute inset-0 hidden rounded-full border border-gold/10 md:block" />
+
+              {/* Avatar */}
+              <div className="relative mx-auto h-[320px] w-[320px] rounded-full p-[3px] bg-gradient-to-br from-gold via-gold-soft to-transparent shadow-[0_0_50px_rgba(212,175,55,0.15)] md:h-[380px] md:w-[380px]">
+                <div className="group relative h-full w-full overflow-hidden rounded-full border border-border bg-ink">
+                  <img
+                    src={sgPhoto}
+                    alt="Dr. Shivangi Goyal"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  {/* Overlay effects */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
+                  <div className="absolute left-0 right-0 top-1/2 h-px bg-gold/10" />
+                  <div className="absolute bottom-0 top-0 left-1/2 w-px bg-gold/10" />
+                </div>
+              </div>
+
+              {/* Floating Card */}
+              <div className="relative z-10 mx-auto -mt-16 w-full max-w-[95%]">
+                <div className="glass-strong rounded-3xl border border-gold/20 px-6 py-7 shadow-2xl backdrop-blur-xl md:px-8">
+                  <div className="flex justify-center">
+                    <span className="inline-flex rounded-full border border-gold/30 bg-gold/10 px-5 py-2 text-[10px] uppercase tracking-[0.28em] text-gold">
+                      Founder & Chief Mentor
+                    </span>
+                  </div>
+
+                  <div className="mt-6 space-y-5 text-center">
+                    <div>
+                      <p className="text-base font-semibold text-ivory">
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium text-gold">
+                        Quantum Global Campus
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        Doctor of Philosophy (PhD)
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium text-gold">
+                        Harvard Business School
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        Executive Education
+                      </p>
+                    </div>
+
+
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium text-gold">
+                        Imperial Business School
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        MSc in Economics and strategy for Business
+                      </p>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium text-gold">
+                        Shri Ram College of Commerce (SRCC)
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        Bachelor of Commerce
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="reveal lg:col-span-7 lg:pt-8">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-gold">
+              ABOUT THE FOUNDER
+            </span>
+
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-ivory md:text-6xl">
+              Dr. Shivangi Goyal
+            </h2>
+
+            <p className="mt-3 text-xs font-mono uppercase tracking-[0.35em] text-gold">
+              Chief Mentor · Intelligent Education
+            </p>
+
+            <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              Dr. Shivangi Goyal is an internationally acclaimed academic
+              mentor and admissions strategist known for helping students
+              prepare for Ivy League and top global university admissions
+              through early, intentional profile building.
+            </p>
+
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              Under her guidance, students go beyond grades and test scores to
+              build research portfolios, lead innovation projects, publish
+              impactful work, and develop a strong academic identity that
+              stands out to admissions committees.
+            </p>
+
+            {/* Stats */}
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="glass rounded-2xl border border-border/60 p-5 text-center transition-all duration-300 hover:border-gold/30 hover:-translate-y-1"
+                >
+                  <div className="font-serif text-3xl font-semibold text-gradient-gold md:text-4xl">
+                    {s.value}
+                  </div>
+
+                  <div className="mt-3 text-[10px] font-mono uppercase tracking-[0.18em] leading-relaxed text-muted-foreground">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Quote */}
+            <div className="relative mt-12 border-l-2 border-gold pl-8">
+              <Quote className="absolute -left-[14px] top-0 h-7 w-7 bg-background text-gold" />
+
+              <p className="max-w-3xl font-serif text-2xl italic leading-relaxed text-ivory md:text-3xl">
+                “The students who build competitive global profiles are those
+                who discover their unique intellectual identity years before
+                hitting ‘Submit’.”
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -506,7 +759,7 @@ function Company() {
             <div className="relative rounded-3xl p-1 bg-gradient-to-br from-border via-gold/30 to-border">
               <div className="rounded-[22px] bg-card overflow-hidden aspect-[4/5] flex items-center justify-center relative group">
                 <img
-                  src={mentorshipIllustration}
+                  src={proofImage}
                   alt="Elite Mentorship & Global Education Illustration"
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
@@ -535,110 +788,19 @@ function Company() {
   );
 }
 
-/* ---------- SECTION 5 — ABOUT THE FOUNDER ---------- */
-function Founder() {
-  const stats = [
-    { value: "10+", label: "Years Mentoring" },
-    { value: "200+", label: "Students Placed" },
-    { value: "30+", label: "Ivy & Elite Univs" },
-    { value: "98%", label: "Success Rate" },
-  ];
-
-  return (
-    <section id="founder" className="relative py-28 md:py-36 overflow-hidden bg-background border-t border-border">
-      <div className="glow-orb animate-float-slow" style={{ width: 500, height: 500, top: "25%", left: "-100px", background: "oklch(0.82 0.13 85 / 12%)" }} />
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
-          {/* Left Side: Avatar/Showcase Frame */}
-          <div className="lg:col-span-5 reveal flex justify-center">
-            <div className="relative w-80 h-80 md:w-96 md:h-96">
-              {/* Decorative premium elements */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold/30 to-transparent blur-3xl" />
-              <div className="absolute -inset-4 rounded-full border border-gold/10 animate-spin-slow hidden md:block" />
-
-              {/* Outer Golden Border */}
-              <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-br from-gold via-gold-soft to-transparent shadow-[0_0_50px_rgba(212,175,55,0.15)]">
-                {/* Inner Container */}
-                <div className="w-full h-full rounded-full bg-ink flex flex-col items-center justify-center overflow-hidden border border-border relative group">
-                  <img
-                    src={sgPhoto}
-                    alt="Dr. Shivangi Goyal"
-                    className="w-full h-full object-cover rounded-full scale-105 group-hover:scale-110 transition-transform duration-700"
-                  />
-                  {/* Subtle lines inside avatar */}
-                  <div className="absolute inset-0 bg-radial-gradient from-transparent to-background/50 pointer-events-none" />
-                  <div className="absolute top-1/2 left-0 right-0 h-px bg-gold/10" />
-                  <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gold/10" />
-                </div>
-              </div>
-
-              {/* Floating Badge */}
-              <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full glass-strong text-[10px] tracking-[0.3em] uppercase text-gold border border-gold/30 shadow-2xl">
-                Founder & Chief Mentor
-              </span>
-            </div>
-          </div>
-
-          {/* Right Side: Copy & Content */}
-          <div className="lg:col-span-7 reveal">
-            <span className="text-[11px] tracking-[0.3em] uppercase text-gold">ABOUT THE FOUNDER</span>
-            <h2 className="mt-4 font-serif text-4xl md:text-5xl text-ivory">Dr. Shivangi Goyal</h2>
-            <p className="mt-2 text-gold tracking-widest text-xs uppercase font-mono">Chief Mentor · Intelligent Education</p>
-
-            <p className="mt-6 text-muted-foreground leading-relaxed text-base md:text-lg">
-              Dr. Shivangi Goyal is an internationally acclaimed academic mentor and admissions strategist. Believing that early, intentional preparation is the key to global university admissions, she has pioneered a developmental methodology that aligns students' natural intellectual curiosity with the high expectations of Ivy League and world-class universities.
-            </p>
-
-            <p className="mt-4 text-muted-foreground leading-relaxed text-sm md:text-base">
-              Under her direct strategic guidance, students do not just memorize facts or optimize standardized test scores. They craft unique research portfolios, spearhead innovation projects, publish high-impact articles, and develop a coherent academic voice that admissions committees find impossible to ignore.
-            </p>
-
-            {/* Achievement Counters Grid */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} className="glass hover:border-gold/30 rounded-2xl p-5 text-center transition-all duration-300">
-                  <div className="font-serif text-3xl md:text-4xl text-gradient-gold font-semibold">{s.value}</div>
-                  <div className="text-[9px] tracking-[0.15em] uppercase text-muted-foreground mt-2 font-mono leading-none">{s.label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Trust Quote */}
-            <div className="mt-10 relative pl-8 border-l-2 border-gold">
-              <Quote className="absolute -left-3.5 -top-1 w-6 h-6 text-gold bg-background" />
-              <p className="font-serif italic text-xl md:text-2xl leading-normal text-ivory">
-                "The students who build competitive global profiles are those who discover their unique intellectual identity years before hitting 'Submit'."
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------- LEARN ---------- */
 function Learn() {
   const items = [
-    "Publications & Research Papers",
-    "Innovation Pitching",
-    "Project Creation",
-    "Personal Intellectual Identity",
-    "What Universities Actually Look For",
-    "Building Your Profile Intentionally",
-    "Becoming Globally Competitive",
-    "Building an Offering Beyond Grades",
-    "Creating a Strong 'Why You' Story",
-    "Ivy League & Top University Positioning",
-    "Strategic Roadmap for 2027/2028 Intake",
+    "Building a World-Class Intellectual Identity",
+    "Strategic Profile Building for Ivy League & Global Universities",
+    "Research, Innovation & Capstone Development for 2027/2028 Admissions",
+
   ];
   return (
     <section id="learn" className="relative py-28 md:py-36">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center reveal">
-          <span className="text-[11px] tracking-[0.3em] uppercase text-gold">The Curriculum</span>
+          <span className="text-[11px] tracking-[0.3em] uppercase text-gold">Takeaways </span>
           <h2 className="mt-5 font-serif text-4xl md:text-6xl">What You Will Learn</h2>
           <p className="mt-5 max-w-2xl mx-auto text-muted-foreground">
             A precise, high-signal walkthrough of the levers that move world-class admissions outcomes.
@@ -712,26 +874,22 @@ function Pricing() {
       popular: false,
       features: [
         "2 Seats (Student + 1 Parent / Guardian)",
-        "Double Seminar Dossiers & Worksheets",
-        "Family Decision-Making Alignment",
-        "Direct Q&A Interaction",
-        "Two Official Certificates",
+        "Comprehensive Seminar Dossier",
+        "Interactive Q&A Session Privileges",
+        "Official Certificate of Attendance",
       ],
     },
     {
       title: "Student + 2 Parents",
       price: 1799,
       earlyBird: 1200,
-      badge: "Most Popular · Ultimate Value",
       urgency: "Only 2 seats left at this price!",
       popular: true,
       features: [
         "3 Seats (Student + Both Parents)",
-        "Premium Seminar Dossier & Worksheets",
-        "Pre-Seminar Profile Questionnaire",
-        "Direct Strategy Q&A Prioritization",
-        "Priority Post-Seminar Mentor Follow-up",
-        "Three Official Certificates",
+        "Comprehensive Seminar Dossier",
+        "Interactive Q&A Session Privileges",
+        "Official Certificate of Attendance",
       ],
     },
   ];
@@ -787,12 +945,6 @@ function Pricing() {
                 }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {/* Popular Highlighter Badge */}
-              {t.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-gold via-gold-soft to-gold text-[9px] font-bold tracking-[0.2em] uppercase text-background shadow-lg">
-                  MOST POPULAR COMBINATION
-                </div>
-              )}
 
               <div>
                 {/* Header */}
@@ -819,13 +971,13 @@ function Pricing() {
                 {/* Seat Urgency Meter */}
                 <div className="mt-4 h-1.5 w-full bg-border/20 rounded-full overflow-hidden relative">
                   <div
-                    className={`h-full rounded-full bg-gradient-to-r from-gold to-gold-soft ${t.popular ? "w-[85%]" : i === 1 ? "w-[75%]" : "w-[60%]"
+                    className={`h-full rounded-full bg-gradient-to-r from-gold to-gold-soft ${t.popular ? "w-[40%]" : i === 1 ? "w-[50%]" : "w-[30%]"
                       }`}
                   />
                 </div>
                 <div className="mt-2 flex justify-between text-[9px] text-muted-foreground font-mono">
                   <span>Capacity Filled</span>
-                  <span className="text-gold font-bold">{t.popular ? "13/15 Seats" : i === 1 ? "12/15 Seats" : "11/15 Seats"}</span>
+                  <span className="text-gold font-bold">{t.popular ? "6/15 Seats" : i === 1 ? "7/15 Seats" : "5/15 Seats"}</span>
                 </div>
 
                 {/* Features List */}
@@ -842,7 +994,7 @@ function Pricing() {
               {/* Action Button */}
               <div className="mt-8 pt-4">
                 <a
-                  href="#register"
+                  href="https://rzp.io/rzp/W2qzhuzt"
                   className={`w-full py-3.5 rounded-full text-center font-medium text-sm flex items-center justify-center gap-2 transition-all duration-300 ${t.popular
                     ? "btn-gold shadow-lg"
                     : "btn-outline-gold hover:bg-gold/10"
@@ -863,40 +1015,26 @@ function Pricing() {
 function WhyAttend() {
   const points = [
     {
-      title: "Avoid Costly Admission Mistakes",
-      desc: "Learn how to completely bypass standard structural errors that sink otherwise brilliant academic files.",
+      title: "Building Your Intellectual Identity",
+      desc: "Understand your profile, identify your strengths and interests, craft a compelling elevator pitch, and develop a unique personal brand that clearly communicates what makes you different and impactful.",
       icon: Shield,
     },
     {
-      title: "Learn Insider Strategies",
-      desc: "Gain rare, high-value insights direct from veteran advisors specializing in elite placement strategies.",
+      title: "Two Powerful Levers for Profile Building",
+      desc: "Master the exact framework for writing high-impact research papers and building real-world working projects that demonstrate innovation, problem-solving, and intellectual depth.",
       icon: Lightbulb,
     },
     {
-      title: "Build Ivy League Level Profiles",
-      desc: "Construct an actionable academic blueprint that highlights intellectual capability, publication values, and original research.",
+      title: "FAQs Answered by Experts",
+      desc: "With 8+ years of experience, we address the most important and commonly unanswered questions about profile building, research, projects, and global university admissions.",
       icon: Trophy,
     },
     {
-      title: "Scholarship & Funding Pipelines",
-      desc: "Discover reliable methods to source merit-based institutional scholarship funds, research grants, and stipends.",
+      title: "Personalized Guidance & Founder Access",
+      desc: "Receive personalized mentorship tailored to your goals, with the opportunity to directly interact with the founder for strategic guidance and expert insights.",
       icon: Award,
     },
-    {
-      title: "Career-Focused Planning",
-      desc: "Align chosen university credentials directly with strategic global post-graduation employment markets and networks.",
-      icon: Target,
-    },
-    {
-      title: "Direct Mentorship Access",
-      desc: "Ask Dr. Shivangi Goyal specific strategy questions, receiving high-signal, personalized guidance in real time.",
-      icon: Users,
-    },
-    {
-      title: "International Roadmap Clarity",
-      desc: "Walk away with a precise, step-by-step roadmap tailored specifically for the competitive 2027 and 2028 intakes.",
-      icon: Compass,
-    },
+
   ];
 
   return (
@@ -912,7 +1050,7 @@ function WhyAttend() {
             <em className="text-gradient-gold not-italic">To Miss This.</em>
           </h2>
           <p className="mt-5 text-muted-foreground text-lg">
-            This workshop isn't just an informational seminar — it is a structural intervention to optimize your student’s developmental trajectory.
+            This workshop isn't just an informational seminar, it is a structural intervention to optimize your development trajectory.
           </p>
         </div>
 
@@ -923,7 +1061,7 @@ function WhyAttend() {
             return (
               <div
                 key={pt.title}
-                className={`reveal glass rounded-2xl p-7 flex flex-col justify-between hover:border-gold/30 hover:-translate-y-1 transition-all duration-500 group ${i === 6 ? "sm:col-span-2 lg:col-span-3 flex flex-col md:flex-row md:items-center md:gap-8" : ""
+                className={`reveal glass rounded-2xl p-7 flex flex-col justify-between hover:border-gold/30 hover:-translate-y-1 transition-all duration-500 group ${i === 5 ? "sm:col-span-2 lg:col-span-3 flex flex-col md:flex-row md:items-center md:gap-8" : ""
                   }`}
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
@@ -968,7 +1106,7 @@ function FinalCTA() {
         <h2 className="reveal mt-6 font-serif text-5xl md:text-7xl leading-[1.02]">
           Only <em className="text-gradient-gold not-italic">15 Participants</em>
           <br />
-          Will Be Selected.
+
         </h2>
 
         <p className="reveal mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -978,7 +1116,7 @@ function FinalCTA() {
 
         <div className="reveal mt-12">
           <a
-            href="https://rzp.io/your-payment-link"
+            href="https://rzp.io/rzp/W2qzhuzt"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-medium text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(212,175,55,0.25)]"
@@ -1012,53 +1150,164 @@ function FinalCTA() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="relative pt-20 pb-10 border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <img src={logoUrl} alt="Intelligent Education Logo" className="w-8 h-8 object-contain" />
-            <div className="font-serif text-2xl text-ivory">
-              Intelligent <span className="italic text-gold">Education</span>
+    <footer className="relative border-t border-border bg-ink/40 backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        {/* Top Grid */}
+        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
+
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3">
+              <img
+                src={logoUrl}
+                alt="Intelligent Education Logo"
+                className="w-10 h-10 object-contain"
+              />
+
+              <div className="font-serif text-2xl text-ivory leading-none">
+                Intelligent{" "}
+                <span className="italic text-gold">Education</span>
+              </div>
+            </div>
+
+            <p className="mt-5 max-w-md text-sm leading-7 text-muted-foreground">
+              A premium mentorship platform helping students build
+              world-class academic and leadership profiles for elite
+              global universities.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">
+                Ivy League Mentorship
+              </span>
+
+              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">
+                2027 / 2028 Intake
+              </span>
+
+              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">
+                In-Person Seminar
+              </span>
             </div>
           </div>
-          <p className="mt-3 text-sm text-muted-foreground max-w-sm">
-            A premium mentorship for students architecting world-class academic futures.
-          </p>
-        </div>
-        <div>
-          <div className="text-[10px] tracking-[0.25em] uppercase text-gold">Workshop </div>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>20 June 2026 · 5:00 PM - 7:00 PM</li>
-            <li>Kunzum Books, GK II</li>
-            <li>New Delhi 110048</li>
-          </ul>
-        </div>
-        <div>
-          <div className="text-[10px] tracking-[0.25em] uppercase text-gold">Connect</div>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><Mail className="w-3.5 h-3.5" /> ho@intelligenteducation.org</li>
-            <li className="flex items-center gap-4 pt-2">
-              <a href="https://www.instagram.com/intelligenteducation_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" className="hover:text-gold transition"><Instagram className="w-4 h-4" /></a>
-              <a href="https://www.linkedin.com/in/shivangiguptaent/" aria-label="LinkedIn" className="hover:text-gold transition"><Linkedin className="w-4 h-4" /></a>
 
-            </li>
-          </ul>
+          {/* Event Details */}
+          <div>
+            <div className="text-[11px] tracking-[0.3em] uppercase text-gold">
+              Event Details
+            </div>
+
+            <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
+              <li>
+                <span className="block text-ivory font-medium">
+                  Date & Time
+                </span>
+                20 June 2026 · 5:15 PM – 6:30 PM
+              </li>
+
+              <li>
+                <span className="block text-ivory font-medium">
+                  Venue
+                </span>
+                Kunzum Books, GK II
+              </li>
+
+              <li>
+                <span className="block text-ivory font-medium">
+                  Address
+                </span>
+                Greater Kailash II, New Delhi 110048
+              </li>
+            </ul>
+
+            {/* Mini Map */}
+            <div className="mt-6 overflow-hidden rounded-2xl border border-border shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.2041891899266!2d77.244177!3d28.533581700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f2d660c43f%3A0xfca7a8cba7d33a47!2sKunzum%20books!5e0!3m2!1sen!2sin!4v1779693692055!5m2!1sen!2sin"
+                className="w-full h-[220px]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <div className="text-[11px] tracking-[0.3em] uppercase text-gold">
+              Connect
+            </div>
+
+            <div className="mt-5 space-y-5">
+              <a
+                href="mailto:ho@intelligenteducation.org"
+                className="flex items-center gap-3 text-sm text-muted-foreground hover:text-gold transition"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-border">
+                  <Mail className="w-4 h-4" />
+                </div>
+
+                <span>ho@intelligenteducation.org</span>
+              </a>
+
+              <div>
+                <div className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  Socials
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/intelligenteducation_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border hover:border-gold hover:text-gold transition"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/shivangiguptaent/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border hover:border-gold hover:text-gold transition"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="max-w-6xl mx-auto px-6 mt-14 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-        <div>© {new Date().getFullYear()} Intelligent Education. All rights reserved.</div>
-        <div className="tracking-[0.25em] uppercase text-[10px]"></div>
+
+        {/* Bottom Bar */}
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">
+          <div>
+            © {new Date().getFullYear()} Intelligent Education. All rights
+            reserved.
+          </div>
+
+          <div className="tracking-[0.25em] uppercase text-[10px] text-gold/80">
+            Crafted For Future Global Leaders
+          </div>
+        </div>
       </div>
     </footer>
   );
 }
 
-/* ---------- MOBILE STICKY ---------- */
+/* ---------- MOBILE STICKY CTA ---------- */
 function MobileSticky() {
   return (
-    <div className="md:hidden fixed bottom-4 inset-x-4 z-50">
-      <a href="#register" className="btn-gold w-full py-3.5 rounded-full font-medium flex items-center justify-center gap-2 shadow-2xl">
-        Reserve Your Seat <ArrowRight className="w-4 h-4" />
+    <div className="fixed inset-x-4 bottom-4 z-50 md:hidden">
+      <a
+        href="https://rzp.io/rzp/W2qzhuzt"
+        className="btn-gold flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-medium shadow-[0_10px_40px_rgba(212,175,55,0.25)]"
+      >
+        Reserve Your Seat
+        <ArrowRight className="w-4 h-4" />
       </a>
     </div>
   );
