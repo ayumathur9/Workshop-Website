@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Exclusive in-person strategy session by Dr. Shivangi Goyal — only 15 seats." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: "https://events.intelligenteducation.org/" },
+      { property: "og:image", content: "https://events.intelligenteducation.org/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
