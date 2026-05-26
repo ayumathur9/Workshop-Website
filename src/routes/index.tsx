@@ -4,7 +4,7 @@ import {
   Calendar, Clock, MapPin, Sparkles, BookOpen, Lightbulb,
   Globe2, Compass, Target, Quote, Check, ArrowRight, Star,
   Award, Users, GraduationCap, Instagram, Linkedin, Mail,
-  Shield, CheckCircle, Trophy, Sparkle
+  Shield, CheckCircle, Trophy, Sparkle, ChevronDown, ChevronUp
 } from "lucide-react";
 import mentorshipIllustration from "../assets/mentorship_illustration.png";
 import logoUrl from "../assets/logo.png";
@@ -25,6 +25,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Exclusive in-person strategy session by Dr. Shivangi Goyal — only 15 seats." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: "https://events.intelligenteducation.org/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -56,6 +57,19 @@ export const Route = createFileRoute("/")({
           organizer: { "@type": "Organization", name: "Intelligent Education" },
           performer: { "@type": "Person", name: "Dr. Shivangi Goyal" },
         }),
+      },
+      // Meta Pixel Code
+      {
+        children: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '638814107950963');
+fbq('track', 'PageView');`,
       },
     ],
   }),
@@ -95,10 +109,6 @@ function LandingPage() {
       <Learn />
       <Pricing />
       <WhyAttend />
-      {/* <WhyFail />
-      <Format />
-      <Testimonials /> */}
-      {/* <Register /> */}
       <FinalCTA />
       <Footer />
       <MobileSticky />
@@ -128,7 +138,6 @@ function Nav({ scrolled }: { scrolled: boolean }) {
           <a href="#company" className="hover:text-gold transition-colors">About Us</a>
           <a href="#pricing" className="hover:text-gold transition-colors">Pricing</a>
           <a href="#why-attend" className="hover:text-gold transition-colors">Why Attend</a>
-          <a href="https://rzp.io/rzp/W2qzhuzt" className="hover:text-gold transition-colors"></a>
         </nav>
         <a
           href="https://rzp.io/rzp/W2qzhuzt"
@@ -179,7 +188,6 @@ function Hero() {
             background: "oklch(0.82 0.13 85 / 18%)",
           }}
         />
-
         <div
           className="glow-orb animate-float-slow"
           style={{
@@ -191,7 +199,6 @@ function Hero() {
             animationDelay: "3s",
           }}
         />
-
         <div className="max-w-6xl mx-auto px-6 relative">
           <div className="flex justify-center mb-8 reveal">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-[11px] tracking-[0.25em] uppercase text-gold">
@@ -199,7 +206,6 @@ function Hero() {
               Elite Global University Strategy Session
             </span>
           </div>
-
           <h1 className="reveal text-center font-serif text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
             Your Study Abroad Journey
             <br />
@@ -208,7 +214,6 @@ function Hero() {
             </span>{" "}
             Applications.
           </h1>
-
           <p className="reveal mt-8 max-w-2xl mx-auto text-center text-lg md:text-xl text-muted-foreground leading-relaxed">
             An exclusive in-person strategy session with{" "}
             <em className="text-gradient-gold not-italic">
@@ -218,7 +223,6 @@ function Hero() {
             <span className="text-ivory"> 2027 / 2028 </span>
             Undergraduate & Master's intakes.
           </p>
-
           <div className="reveal mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {[
               { icon: Calendar, label: "Date", value: "20 June 2026" },
@@ -232,12 +236,10 @@ function Hero() {
                 <div className="w-11 h-11 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
                   <d.icon className="w-5 h-5 text-gold" />
                 </div>
-
                 <div>
                   <div className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
                     {d.label}
                   </div>
-
                   <div className="font-serif text-lg text-ivory">
                     {d.value}
                   </div>
@@ -245,11 +247,9 @@ function Hero() {
               </div>
             ))}
           </div>
-
           <p className="reveal mt-5 text-center text-sm text-muted-foreground">
             60, Block M, Greater Kailash II, New Delhi 110048
           </p>
-
           <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://rzp.io/rzp/W2qzhuzt"
@@ -258,14 +258,11 @@ function Hero() {
               Reserve Your Seat
               <ArrowRight className="w-4 h-4" />
             </a>
-
             <span className="btn-outline-gold px-6 py-3.5 rounded-full text-sm tracking-wide">
               Only 15 Seats Available
             </span>
           </div>
-
           <div className="reveal mt-16 gold-divider max-w-xl mx-auto" />
-
           <p className="reveal mt-6 text-center text-xs tracking-[0.4em] uppercase text-muted-foreground shimmer-text">
             Premium · Limited · Future-Ready Positioning
           </p>
@@ -287,6 +284,7 @@ function Hero() {
     </>
   );
 }
+
 /* ---------- ABOUT ---------- */
 function About() {
   const cards = [
@@ -320,7 +318,6 @@ function About() {
       t: "Answering the Most Unanswered Questions",
       d: "Gain clarity on the hidden realities, common misconceptions, and strategic decisions that shape successful global university admissions.",
     },
-
   ];
   return (
     <section id="about" className="relative py-28 md:py-36">
@@ -346,7 +343,6 @@ function About() {
             </p>
           </div>
         </div>
-
         <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {cards.map((c, i) => (
             <div
@@ -370,7 +366,7 @@ function About() {
   );
 }
 
-/* ---------- TIMELINE OF EVENTS ---------- */
+/* ---------- TIMELINE ---------- */
 function Timeline() {
   const timelineItems = [
     {
@@ -436,22 +432,17 @@ function Timeline() {
             A carefully structured timeline designed to cover every crucial facet of the elite study abroad journey.
           </p>
         </div>
-
         <div className="relative mt-20">
-          {/* Vertical central line */}
           <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-gold/10 via-gold/50 to-gold/10 -translate-x-1/2" />
-
           <div className="space-y-12">
             {timelineItems.map((item, i) => {
               const Icon = item.icon;
               return (
                 <div
                   key={i}
-                  className={`reveal relative flex flex-col md:flex-row items-start ${i % 2 === 1 ? "md:flex-row-reverse" : ""
-                    }`}
+                  className={`reveal relative flex flex-col md:flex-row items-start ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  {/* Left/Right Text Content */}
                   <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"}`}>
                     <div className="glass hover:border-gold/30 p-6 md:p-8 rounded-2xl transition-all duration-500 hover:-translate-y-1 group relative overflow-hidden">
                       <div className="absolute top-0 right-0 p-3 text-[10px] tracking-widest font-mono text-gold/30 group-hover:text-gold/60 transition-colors uppercase">
@@ -462,15 +453,11 @@ function Timeline() {
                       <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
-
-                  {/* Central Node (Icon & Dot) */}
                   <div className="absolute left-8 md:left-1/2 -translate-x-1/2 top-4 md:top-8 z-10 flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full bg-background border border-gold/40 flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.15)] hover:border-gold hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500">
                       <Icon className="w-5 h-5 text-gold" />
                     </div>
                   </div>
-
-                  {/* Empty Spacer Column for Desktop */}
                   <div className="hidden md:block w-1/2" />
                 </div>
               );
@@ -486,20 +473,15 @@ function Timeline() {
           Reserve Your Seat
           <ArrowRight className="w-4 h-4" />
         </a>
-
         <span className="btn-outline-gold px-6 py-3.5 rounded-full text-sm tracking-wide">
           Only 15 Seats Available
         </span>
       </div>
-
     </section>
   );
-
 }
 
-
-
-/* ---------- SECTION 5 — ABOUT THE FOUNDER ---------- */
+/* ---------- FOUNDER ---------- */
 function Founder() {
   const stats = [
     { value: "10+", label: "Years Mentoring" },
@@ -513,7 +495,6 @@ function Founder() {
       id="founder"
       className="relative overflow-hidden border-t border-border bg-background py-24 md:py-32"
     >
-      {/* Ambient Glow */}
       <div
         className="glow-orb animate-float-slow pointer-events-none"
         style={{
@@ -524,18 +505,12 @@ function Founder() {
           background: "oklch(0.82 0.13 85 / 10%)",
         }}
       />
-
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid items-start gap-20 lg:grid-cols-12">
-          {/* LEFT SIDE */}
           <div className="reveal lg:col-span-5">
             <div className="relative mx-auto w-full max-w-[420px]">
-              {/* Decorative ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold/20 to-transparent blur-3xl" />
-
               <div className="absolute inset-0 hidden rounded-full border border-gold/10 md:block" />
-
-              {/* Avatar */}
               <div className="relative mx-auto h-[320px] w-[320px] rounded-full p-[3px] bg-gradient-to-br from-gold via-gold-soft to-transparent shadow-[0_0_50px_rgba(212,175,55,0.15)] md:h-[380px] md:w-[380px]">
                 <div className="group relative h-full w-full overflow-hidden rounded-full border border-border bg-ink">
                   <img
@@ -543,15 +518,11 @@ function Founder() {
                     alt="Dr. Shivangi Goyal"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-
-                  {/* Overlay effects */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
                   <div className="absolute left-0 right-0 top-1/2 h-px bg-gold/10" />
                   <div className="absolute bottom-0 top-0 left-1/2 w-px bg-gold/10" />
                 </div>
               </div>
-
-              {/* Floating Card */}
               <div className="relative z-10 mx-auto -mt-16 w-full max-w-[95%]">
                 <div className="glass-strong rounded-3xl border border-gold/20 px-6 py-7 shadow-2xl backdrop-blur-xl md:px-8">
                   <div className="flex justify-center">
@@ -559,114 +530,57 @@ function Founder() {
                       Founder & Chief Mentor
                     </span>
                   </div>
-
                   <div className="mt-6 space-y-5 text-center">
-                    <div>
-                      <p className="text-base font-semibold text-ivory">
-                      </p>
-                    </div>
-
                     <div className="space-y-1">
-                      <p className="text-sm font-medium text-gold">
-                        Quantum Global Campus
-                      </p>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        Doctor of Philosophy (PhD)
-                      </p>
+                      <p className="text-sm font-medium text-gold">Quantum Global Campus</p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">Doctor of Philosophy (PhD)</p>
                     </div>
-
                     <div className="space-y-1">
-                      <p className="text-sm font-medium text-gold">
-                        Harvard Business School
-                      </p>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        Executive Education
-                      </p>
+                      <p className="text-sm font-medium text-gold">Harvard Business School</p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">Executive Education</p>
                     </div>
-
-
                     <div className="space-y-1">
-                      <p className="text-sm font-medium text-gold">
-                        Imperial Business School
-                      </p>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        MSc in Economics and strategy for Business
-                      </p>
+                      <p className="text-sm font-medium text-gold">Imperial Business School</p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">MSc in Economics and strategy for Business</p>
                     </div>
-
                     <div className="space-y-1">
-                      <p className="text-sm font-medium text-gold">
-                        Shri Ram College of Commerce (SRCC)
-                      </p>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        Bachelor of Commerce
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                      </p>
+                      <p className="text-sm font-medium text-gold">Shri Ram College of Commerce (SRCC)</p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">Bachelor of Commerce</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* RIGHT SIDE */}
           <div className="reveal lg:col-span-7 lg:pt-8">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-gold">
-              ABOUT THE FOUNDER
-            </span>
-
+            <span className="text-[11px] uppercase tracking-[0.3em] text-gold">ABOUT THE FOUNDER</span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-ivory md:text-6xl">
               Dr. Shivangi Goyal
             </h2>
-
             <p className="mt-3 text-xs font-mono uppercase tracking-[0.35em] text-gold">
               Chief Mentor · Intelligent Education
             </p>
-
             <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              Dr. Shivangi Goyal is an internationally acclaimed academic
-              mentor and admissions strategist known for helping students
-              prepare for Ivy League and top global university admissions
-              through early, intentional profile building.
+              Dr. Shivangi Goyal is an internationally acclaimed academic mentor and admissions strategist known for helping students prepare for Ivy League and top global university admissions through early, intentional profile building.
             </p>
-
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              Under her guidance, students go beyond grades and test scores to
-              build research portfolios, lead innovation projects, publish
-              impactful work, and develop a strong academic identity that
-              stands out to admissions committees.
+              Under her guidance, students go beyond grades and test scores to build research portfolios, lead innovation projects, publish impactful work, and develop a strong academic identity that stands out to admissions committees.
             </p>
-
-            {/* Stats */}
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {stats.map((s) => (
                 <div
                   key={s.label}
                   className="glass rounded-2xl border border-border/60 p-5 text-center transition-all duration-300 hover:border-gold/30 hover:-translate-y-1"
                 >
-                  <div className="font-serif text-3xl font-semibold text-gradient-gold md:text-4xl">
-                    {s.value}
-                  </div>
-
-                  <div className="mt-3 text-[10px] font-mono uppercase tracking-[0.18em] leading-relaxed text-muted-foreground">
-                    {s.label}
-                  </div>
+                  <div className="font-serif text-3xl font-semibold text-gradient-gold md:text-4xl">{s.value}</div>
+                  <div className="mt-3 text-[10px] font-mono uppercase tracking-[0.18em] leading-relaxed text-muted-foreground">{s.label}</div>
                 </div>
               ))}
             </div>
-
-            {/* Quote */}
             <div className="relative mt-12 border-l-2 border-gold pl-8">
               <Quote className="absolute -left-[14px] top-0 h-7 w-7 bg-background text-gold" />
-
               <p className="max-w-3xl font-serif text-2xl italic leading-relaxed text-ivory md:text-3xl">
-                “The students who build competitive global profiles are those
-                who discover their unique intellectual identity years before
-                hitting ‘Submit’.”
+                "The students who build competitive global profiles are those who discover their unique intellectual identity years before hitting 'Submit'."
               </p>
             </div>
           </div>
@@ -676,14 +590,13 @@ function Founder() {
   );
 }
 
-/* ---------- ABOUT INTELLIGENT EDUCATION ---------- */
+/* ---------- COMPANY ---------- */
 function Company() {
   return (
     <section id="company" className="relative py-28 md:py-36 bg-ink/10 overflow-hidden border-t border-border">
       <div className="glow-orb animate-float-slow" style={{ width: 600, height: 600, top: "-10%", right: "-10%", background: "oklch(0.82 0.13 85 / 8%)" }} />
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Side: Content */}
           <div className="lg:col-span-7 reveal">
             <span className="text-[11px] tracking-[0.3em] uppercase text-gold">ABOUT INTELLIGENT EDUCATION</span>
             <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight">
@@ -693,9 +606,7 @@ function Company() {
             <p className="mt-6 text-muted-foreground text-base md:text-lg leading-relaxed">
               Intelligent Education is an elite global advisory that operates at the intersection of intellectual development and strategic university placement. We reject the transactional counselor model, focusing instead on long-term mentorship.
             </p>
-
             <div className="mt-10 space-y-6">
-              {/* Vision */}
               <div className="glass hover:border-gold/20 p-5 rounded-2xl transition-all duration-300">
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0">
@@ -709,8 +620,6 @@ function Company() {
                   </div>
                 </div>
               </div>
-
-              {/* Mission */}
               <div className="glass hover:border-gold/20 p-5 rounded-2xl transition-all duration-300">
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0">
@@ -724,8 +633,6 @@ function Company() {
                   </div>
                 </div>
               </div>
-
-              {/* Trust */}
               <div className="glass hover:border-gold/20 p-5 rounded-2xl transition-all duration-300">
                 <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0">
@@ -752,8 +659,6 @@ function Company() {
               </div>
             </div>
           </div>
-
-          {/* Right Side: Imagery */}
           <div className="lg:col-span-5 reveal relative">
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-gold/20 to-transparent blur-2xl -z-10" />
             <div className="relative rounded-3xl p-1 bg-gradient-to-br from-border via-gold/30 to-border">
@@ -791,62 +696,24 @@ function Company() {
 /* ---------- LEARN ---------- */
 function Learn() {
   const items = [
-    {
-      heading: "Student Spike Workbook",
-      content: "Booklet with curiosity exercises.",
-    },
-    {
-      heading: "Profile Building Framework",
-      content:
-        "Project brainstorming methodology and roadmap creation.",
-    },
-    {
-      heading: "30 Days Passion Project Challenge",
-      content:
-        "Comes with challenge sheets, execution prompts, and a detailed execution timeline.",
-    },
-    {
-      heading: "Curiosity Map",
-      content:
-        "A self-guided self-discovery framework to identify your intellectual interests.",
-    },
-    {
-      heading: "The Anti-Resume",
-      content:
-        "A trademarked framework by Intelligent Education to showcase depth beyond achievements.",
-    },
-    {
-      heading: "5 Hour Weekly Growth System",
-      content:
-        "Learn how to use your weekly time intentionally for long-term growth.",
-    },
-    // {
-    //   heading: "14 Days Intellectual Courage Challenge",
-    //   content:
-    //     "Build a consistent pattern of action, exploration, and personal growth.",
-    // },
+    { heading: "Student Spike Workbook", content: "Booklet with curiosity exercises." },
+    { heading: "Profile Building Framework", content: "Project brainstorming methodology and roadmap creation." },
+    { heading: "30 Days Passion Project Challenge", content: "Comes with challenge sheets, execution prompts, and a detailed execution timeline." },
+    { heading: "Curiosity Map", content: "A self-guided self-discovery framework to identify your intellectual interests." },
+    { heading: "The Anti-Resume", content: "A trademarked framework by Intelligent Education to showcase depth beyond achievements." },
+    { heading: "5 Hour Weekly Growth System", content: "Learn how to use your weekly time intentionally for long-term growth." },
   ];
 
   return (
     <section id="learn" className="relative py-28 md:py-36">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Heading */}
         <div className="text-center reveal">
-          <span className="text-[11px] tracking-[0.3em] uppercase text-gold">
-            Takeaways
-          </span>
-
-          <h2 className="mt-5 font-serif text-4xl md:text-6xl text-ivory">
-            What You'll Walk Away With
-          </h2>
-
+          <span className="text-[11px] tracking-[0.3em] uppercase text-gold">Takeaways</span>
+          <h2 className="mt-5 font-serif text-4xl md:text-6xl text-ivory">What You'll Walk Away With</h2>
           <p className="mt-5 max-w-2xl mx-auto text-muted-foreground">
-            Practical frameworks, guided exercises, and systems designed to
-            help students build exceptional intellectual profiles.
+            Practical frameworks, guided exercises, and systems designed to help students build exceptional intellectual profiles.
           </p>
         </div>
-
-        {/* Cards */}
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item, i) => (
             <div
@@ -855,20 +722,12 @@ function Learn() {
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="flex items-start gap-4">
-                {/* Icon */}
                 <div className="mt-1 shrink-0 w-8 h-8 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center">
                   <Check className="w-4 h-4 text-gold" />
                 </div>
-
-                {/* Content */}
                 <div>
-                  <h3 className="text-lg font-semibold text-ivory leading-snug">
-                    {item.heading}
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {item.content}
-                  </p>
+                  <h3 className="text-lg font-semibold text-ivory leading-snug">{item.heading}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.content}</p>
                 </div>
               </div>
             </div>
@@ -879,26 +738,19 @@ function Learn() {
   );
 }
 
-
-/* ---------- PRICING CARDS ---------- */
+/* ---------- PRICING ---------- */
 function Pricing() {
   const [timeLeft, setTimeLeft] = useState({ days: 1, hours: 5, minutes: 24, seconds: 43 });
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        } else {
-          clearInterval(timer);
-          return prev;
-        }
+        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
+        if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        if (prev.days > 0) return { days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
+        clearInterval(timer);
+        return prev;
       });
     }, 1000);
     return () => clearInterval(timer);
@@ -952,8 +804,6 @@ function Pricing() {
     <section id="pricing" className="relative py-28 md:py-36 bg-ink/20 overflow-hidden border-t border-border">
       <div className="glow-orb animate-float-slow" style={{ width: 500, height: 500, bottom: "-100px", right: "-100px", background: "oklch(0.82 0.13 85 / 8%)" }} />
       <div className="max-w-6xl mx-auto px-6 relative">
-
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto reveal">
           <span className="text-[11px] tracking-[0.3em] uppercase text-gold">PRICING OPTIONS</span>
           <h2 className="mt-5 font-serif text-4xl md:text-6xl leading-[1.05]">
@@ -962,33 +812,21 @@ function Pricing() {
           <p className="mt-5 text-muted-foreground text-base md:text-lg">
             Invest in premium mentorship designed to redirect your academic path toward global top-tier institutions.
           </p>
-
-          {/* Countdown timer card */}
           <div className="mt-10 inline-flex flex-col sm:flex-row items-center gap-4 px-6 py-3 rounded-2xl glass border border-gold/30">
             <span className="flex items-center gap-2 text-xs text-gold uppercase tracking-[0.2em] font-mono leading-none">
               <Clock className="w-4 h-4 animate-pulse" /> Early Bird Pricing Expires In:
             </span>
             <div className="flex gap-3 text-ivory font-mono text-sm leading-none font-bold">
-              <div className="flex flex-col items-center">
-                <span>{String(timeLeft.days).padStart(2, "0")}d</span>
-              </div>
+              <span>{String(timeLeft.days).padStart(2, "0")}d</span>
               <span className="text-gold/60">:</span>
-              <div className="flex flex-col items-center">
-                <span>{String(timeLeft.hours).padStart(2, "0")}h</span>
-              </div>
+              <span>{String(timeLeft.hours).padStart(2, "0")}h</span>
               <span className="text-gold/60">:</span>
-              <div className="flex flex-col items-center">
-                <span>{String(timeLeft.minutes).padStart(2, "0")}m</span>
-              </div>
+              <span>{String(timeLeft.minutes).padStart(2, "0")}m</span>
               <span className="text-gold/60">:</span>
-              <div className="flex flex-col items-center text-gold">
-                <span>{String(timeLeft.seconds).padStart(2, "0")}s</span>
-              </div>
+              <span className="text-gold">{String(timeLeft.seconds).padStart(2, "0")}s</span>
             </div>
           </div>
         </div>
-
-        {/* Pricing Cards Grid */}
         <div className="mt-20 grid md:grid-cols-3 gap-8 items-stretch">
           {tiers.map((t, i) => (
             <div
@@ -999,42 +837,26 @@ function Pricing() {
                 }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-
               <div>
-                {/* Header */}
                 <div className="flex items-center justify-between gap-4">
                   <span className={`text-[10px] tracking-[0.2em] uppercase px-3 py-1 rounded-full ${t.popular ? "bg-gold/20 text-gold" : "bg-muted/10 text-muted-foreground"}`}>
                     {t.badge}
                   </span>
-                  <span className="text-[10px] tracking-wider font-mono text-gold leading-none animate-pulse">
-                    {t.urgency}
-                  </span>
+                  <span className="text-[10px] tracking-wider font-mono text-gold leading-none animate-pulse">{t.urgency}</span>
                 </div>
-
                 <h3 className="font-serif text-2xl text-ivory mt-6">{t.title}</h3>
-
-                {/* Price Display */}
                 <div className="mt-6 flex items-baseline gap-3">
                   <span className="text-4xl md:text-5xl font-serif text-gradient-gold font-semibold">₹{t.earlyBird}</span>
                   <span className="text-sm text-muted-foreground line-through">₹{t.price}</span>
-                  <span className="text-[9px] tracking-wider uppercase text-gold font-mono border border-gold/30 px-2 py-0.5 rounded ml-1 bg-gold/5">
-                    Early Bird Rate
-                  </span>
+                  <span className="text-[9px] tracking-wider uppercase text-gold font-mono border border-gold/30 px-2 py-0.5 rounded ml-1 bg-gold/5">Early Bird Rate</span>
                 </div>
-
-                {/* Seat Urgency Meter */}
-                <div className="mt-4 h-1.5 w-full bg-border/20 rounded-full overflow-hidden relative">
-                  <div
-                    className={`h-full rounded-full bg-gradient-to-r from-gold to-gold-soft ${t.popular ? "w-[40%]" : i === 1 ? "w-[50%]" : "w-[30%]"
-                      }`}
-                  />
+                <div className="mt-4 h-1.5 w-full bg-border/20 rounded-full overflow-hidden">
+                  <div className={`h-full rounded-full bg-gradient-to-r from-gold to-gold-soft ${t.popular ? "w-[40%]" : i === 1 ? "w-[50%]" : "w-[30%]"}`} />
                 </div>
                 <div className="mt-2 flex justify-between text-[9px] text-muted-foreground font-mono">
                   <span>Capacity Filled</span>
                   <span className="text-gold font-bold">{t.popular ? "6/15 Seats" : i === 1 ? "7/15 Seats" : "5/15 Seats"}</span>
                 </div>
-
-                {/* Features List */}
                 <ul className="mt-8 space-y-4 border-t border-border/40 pt-6">
                   {t.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -1044,15 +866,10 @@ function Pricing() {
                   ))}
                 </ul>
               </div>
-
-              {/* Action Button */}
               <div className="mt-8 pt-4">
                 <a
                   href="https://rzp.io/rzp/W2qzhuzt"
-                  className={`w-full py-3.5 rounded-full text-center font-medium text-sm flex items-center justify-center gap-2 transition-all duration-300 ${t.popular
-                    ? "btn-gold shadow-lg"
-                    : "btn-outline-gold hover:bg-gold/10"
-                    }`}
+                  className={`w-full py-3.5 rounded-full text-center font-medium text-sm flex items-center justify-center gap-2 transition-all duration-300 ${t.popular ? "btn-gold shadow-lg" : "btn-outline-gold hover:bg-gold/10"}`}
                 >
                   Secure Early Bird Seats <ArrowRight className="w-4 h-4" />
                 </a>
@@ -1065,7 +882,7 @@ function Pricing() {
   );
 }
 
-/* ---------- SECTION 7 — WHY ATTEND ---------- */
+/* ---------- WHY ATTEND ---------- */
 function WhyAttend() {
   const points = [
     {
@@ -1088,15 +905,12 @@ function WhyAttend() {
       desc: "Receive personalized mentorship tailored to your goals, with the opportunity to directly interact with the founder for strategic guidance and expert insights.",
       icon: Award,
     },
-
   ];
 
   return (
     <section id="why-attend" className="relative py-28 md:py-36 bg-ink overflow-hidden border-t border-border">
       <div className="glow-orb animate-float-slow" style={{ width: 600, height: 600, top: "20%", left: "-200px", background: "oklch(0.82 0.13 85 / 8%)" }} />
       <div className="max-w-6xl mx-auto px-6 relative">
-
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto reveal mb-20">
           <span className="text-[11px] tracking-[0.3em] uppercase text-gold">WHY ATTEND</span>
           <h2 className="mt-5 font-serif text-4xl md:text-6xl leading-[1.05]">
@@ -1107,16 +921,13 @@ function WhyAttend() {
             This workshop isn't just an informational seminar, it is a structural intervention to optimize your development trajectory.
           </p>
         </div>
-
-        {/* Why Attend Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {points.map((pt, i) => {
             const Icon = pt.icon;
             return (
               <div
                 key={pt.title}
-                className={`reveal glass rounded-2xl p-7 flex flex-col justify-between hover:border-gold/30 hover:-translate-y-1 transition-all duration-500 group ${i === 5 ? "sm:col-span-2 lg:col-span-3 flex flex-col md:flex-row md:items-center md:gap-8" : ""
-                  }`}
+                className={`reveal glass rounded-2xl p-7 flex flex-col justify-between hover:border-gold/30 hover:-translate-y-1 transition-all duration-500 group ${i === 5 ? "sm:col-span-2 lg:col-span-3 flex flex-col md:flex-row md:items-center md:gap-8" : ""}`}
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <div className="flex gap-5 items-start">
@@ -1143,31 +954,16 @@ function FinalCTA() {
     <section className="relative py-28 md:py-36 bg-ink overflow-hidden">
       <div
         className="glow-orb animate-float-slow"
-        style={{
-          width: 600,
-          height: 600,
-          top: "-20%",
-          left: "20%",
-          background: "oklch(0.82 0.13 85 / 15%)",
-        }}
+        style={{ width: 600, height: 600, top: "-20%", left: "20%", background: "oklch(0.82 0.13 85 / 15%)" }}
       />
-
       <div className="max-w-4xl mx-auto px-6 text-center relative">
-        <span className="reveal text-[11px] tracking-[0.3em] uppercase text-gold">
-          Limited Invitation
-        </span>
-
+        <span className="reveal text-[11px] tracking-[0.3em] uppercase text-gold">Limited Invitation</span>
         <h2 className="reveal mt-6 font-serif text-5xl md:text-7xl leading-[1.02]">
           Only <em className="text-gradient-gold not-italic">15 Participants</em>
-          <br />
-
         </h2>
-
         <p className="reveal mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
-          An exclusive in-person seminar for ambitious students and parents
-          preparing for the 2027/2028 global admissions cycle.
+          An exclusive in-person seminar for ambitious students and parents preparing for the 2027/2028 global admissions cycle.
         </p>
-
         <div className="reveal mt-12">
           <a
             href="https://rzp.io/rzp/W2qzhuzt"
@@ -1178,26 +974,82 @@ function FinalCTA() {
             Reserve My Seat
             <ArrowRight className="w-5 h-5" />
           </a>
-
-
         </div>
-
         <div className="reveal mt-12 flex flex-wrap items-center justify-center gap-3 text-[11px] tracking-[0.25em] uppercase">
-          {[
-            "15 Seats Only",
-            "In-Person Experience",
-            "Applications Closing Soon",
-          ].map((t) => (
-            <span
-              key={t}
-              className="glass px-4 py-2 rounded-full text-gold/90"
-            >
-              {t}
-            </span>
+          {["15 Seats Only", "In-Person Experience", "Applications Closing Soon"].map((t) => (
+            <span key={t} className="glass px-4 py-2 rounded-full text-gold/90">{t}</span>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+/* ---------- EXPANDABLE LEGAL ACCORDION ---------- */
+function LegalAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const items = [
+    {
+      title: "Privacy Policy",
+      content: (
+        <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+          <p>Intelligent Education respects your privacy and is committed to protecting your personal information.</p>
+          <p>We may collect basic personal details such as name, email address, phone number, student and parent information, and event registration details. This information is used only for registration, communication, mentorship services, payment processing, and improving our offerings.</p>
+          <p>We do not sell your personal data. Limited information may be shared with trusted service providers such as payment gateways or authorized operational partners strictly for completing transactions and delivering services.</p>
+          <p>We implement reasonable security measures to protect your data, but no digital system can be guaranteed as completely secure.</p>
+          <p>You have the right to request access, correction, or deletion of your personal data by contacting us at <a href="mailto:ho@intelligenteducation.org" className="text-gold hover:underline">ho@intelligenteducation.org</a>.</p>
+          <p>We may update this policy from time to time, and continued use of our services indicates acceptance of any changes.</p>
+        </div>
+      ),
+    },
+    {
+      title: "Terms & Conditions",
+      content: (
+        <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+          <p>By registering for or attending any program, workshop, or event conducted by Intelligent Education, you agree to the following terms.</p>
+          <p>All registrations are subject to seat availability and are confirmed only after successful payment. Seats are limited and allocated on a first-come, first-served basis.</p>
+          <p>All payments made are generally non-refundable unless the event is cancelled by the organizers. If an event is rescheduled, your registration will be carried forward to the new date.</p>
+          <p>We reserve the right to modify event details including timing, venue, structure, or speakers if required due to unforeseen circumstances. Participants will be informed whenever possible.</p>
+          <p>Participants are expected to maintain respectful behavior during all sessions. Any disruption or misconduct may result in removal from the event without refund.</p>
+          <p>All materials, frameworks, and content shared during the event are the intellectual property of Intelligent Education and cannot be copied, reproduced, or distributed without permission.</p>
+          <p>The event may include photography or recording for documentation and promotional purposes. By attending, you consent to this unless you explicitly opt out in advance.</p>
+          <p>The guidance provided during sessions is educational and advisory in nature. We do not guarantee admissions or outcomes in any institution.</p>
+          <p>These terms are governed by the laws of India, and any disputes will fall under the jurisdiction of courts in New Delhi.</p>
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <div className="mt-10 space-y-3">
+      {items.map((item, i) => {
+        const isOpen = openIndex === i;
+        return (
+          <div
+            key={item.title}
+            className={`glass rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? "border-gold/30" : "border-border/40 hover:border-border/70"}`}
+          >
+            <button
+              onClick={() => setOpenIndex(isOpen ? null : i)}
+              className="w-full flex items-center justify-between px-6 py-4 text-left group"
+            >
+              <span className={`text-sm font-medium tracking-wide transition-colors ${isOpen ? "text-gold" : "text-muted-foreground group-hover:text-ivory"}`}>
+                {item.title}
+              </span>
+              <span className={`transition-transform duration-300 ${isOpen ? "rotate-180 text-gold" : "text-muted-foreground"}`}>
+                <ChevronDown className="w-4 h-4" />
+              </span>
+            </button>
+            {isOpen && (
+              <div className="px-6 pb-6 border-t border-border/30 pt-4">
+                {item.content}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
@@ -1206,75 +1058,45 @@ function Footer() {
   return (
     <footer className="relative border-t border-border bg-ink/40 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 py-20">
-        {/* Top Grid */}
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
-
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
-              <img
-                src={logoUrl}
-                alt="Intelligent Education Logo"
-                className="w-10 h-10 object-contain"
-              />
-
+              <img src={logoUrl} alt="Intelligent Education Logo" className="w-10 h-10 object-contain" />
               <div className="font-serif text-2xl text-ivory leading-none">
-                Intelligent{" "}
-                <span className="italic text-gold">Education</span>
+                Intelligent <span className="italic text-gold">Education</span>
               </div>
             </div>
-
             <p className="mt-5 max-w-md text-sm leading-7 text-muted-foreground">
-              A premium mentorship platform helping students build
-              world-class academic and leadership profiles for elite
-              global universities.
+              A premium mentorship platform helping students build world-class academic and leadership profiles for elite global universities.
             </p>
-
             <div className="mt-8 flex flex-wrap gap-3">
-              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">
-                Ivy League Mentorship
-              </span>
-
-              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">
-                2027 / 2028 Intake
-              </span>
-
-              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">
-                In-Person Seminar
-              </span>
+              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">Ivy League Mentorship</span>
+              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">2027 / 2028 Intake</span>
+              <span className="rounded-full border border-border px-4 py-2 text-xs tracking-wide text-muted-foreground">In-Person Seminar</span>
             </div>
+
+            {/* Legal Accordions */}
+            <LegalAccordion />
           </div>
 
           {/* Event Details */}
           <div>
-            <div className="text-[11px] tracking-[0.3em] uppercase text-gold">
-              Event Details
-            </div>
-
+            <div className="text-[11px] tracking-[0.3em] uppercase text-gold">Event Details</div>
             <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
               <li>
-                <span className="block text-ivory font-medium">
-                  Date & Time
-                </span>
+                <span className="block text-ivory font-medium">Date & Time</span>
                 20 June 2026 · 5:15 PM – 6:30 PM
               </li>
-
               <li>
-                <span className="block text-ivory font-medium">
-                  Venue
-                </span>
+                <span className="block text-ivory font-medium">Venue</span>
                 Kunzum Books, GK II
               </li>
-
               <li>
-                <span className="block text-ivory font-medium">
-                  Address
-                </span>
+                <span className="block text-ivory font-medium">Address</span>
                 Greater Kailash II, New Delhi 110048
               </li>
             </ul>
-
-            {/* Mini Map */}
             <div className="mt-6 overflow-hidden rounded-2xl border border-border shadow-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.2041891899266!2d77.244177!3d28.533581700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f2d660c43f%3A0xfca7a8cba7d33a47!2sKunzum%20books!5e0!3m2!1sen!2sin!4v1779693692055!5m2!1sen!2sin"
@@ -1289,10 +1111,7 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <div className="text-[11px] tracking-[0.3em] uppercase text-gold">
-              Connect
-            </div>
-
+            <div className="text-[11px] tracking-[0.3em] uppercase text-gold">Connect</div>
             <div className="mt-5 space-y-5">
               <a
                 href="mailto:ho@intelligenteducation.org"
@@ -1301,15 +1120,10 @@ function Footer() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-full border border-border">
                   <Mail className="w-4 h-4" />
                 </div>
-
                 <span>ho@intelligenteducation.org</span>
               </a>
-
               <div>
-                <div className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  Socials
-                </div>
-
+                <div className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">Socials</div>
                 <div className="flex items-center gap-3">
                   <a
                     href="https://www.instagram.com/intelligenteducation_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -1320,7 +1134,6 @@ function Footer() {
                   >
                     <Instagram className="w-4 h-4" />
                   </a>
-
                   <a
                     href="https://www.linkedin.com/in/shivangiguptaent/"
                     target="_blank"
@@ -1338,14 +1151,8 @@ function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">
-          <div>
-            © {new Date().getFullYear()} Intelligent Education. All rights
-            reserved.
-          </div>
-
-          <div className="tracking-[0.25em] uppercase text-[10px] text-gold/80">
-            Crafted For Future Global Leaders
-          </div>
+          <div>© {new Date().getFullYear()} Intelligent Education. All rights reserved.</div>
+          <div className="tracking-[0.25em] uppercase text-[10px] text-gold/80">Crafted For Future Global Leaders</div>
         </div>
       </div>
     </footer>
