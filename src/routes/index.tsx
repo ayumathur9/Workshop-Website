@@ -99,6 +99,15 @@ function LandingPage() {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{ display: "none" }}
+          src="https://www.facebook.com/tr?id=638814107950963&ev=PageView&noscript=1"
+          alt=""
+        />
+      </noscript>
       <Nav scrolled={scrolled} />
       <Urgency />
       <Hero />
