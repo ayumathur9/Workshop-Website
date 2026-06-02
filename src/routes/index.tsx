@@ -748,7 +748,7 @@ function Pricing() {
     {
       title: "Single Student",
       price: 1299,
-      earlyBird: 999,
+      earlyBird: 499,
       badge: "Standard Access",
       urgency: "Only 4 Early Bird seats left!",
       popular: false,
@@ -762,7 +762,7 @@ function Pricing() {
     {
       title: "Student + 1 Parent",
       price: 1599,
-      earlyBird: 1100,
+      earlyBird: 699,
       badge: "Recommended Combo",
       urgency: "Only 3 Early Bird seats left!",
       popular: false,
@@ -776,7 +776,7 @@ function Pricing() {
     {
       title: "Student + 2 Parents",
       price: 1799,
-      earlyBird: 1200,
+      earlyBird: 799,
       urgency: "Only 2 seats left at this price!",
       popular: true,
       features: [
